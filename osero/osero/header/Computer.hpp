@@ -7,11 +7,27 @@
 
 /*----------
 COMPUTERクラス
-置ける場所にとりあえず置くCOM
+置ける場所にとりあえず置く基礎COM
 ----------*/
 class NORMAL_COMPUTER {
 protected:
 	COLOR Color;
+
+	/*----------
+	置ける場所があった場合の処理
+	----------*/
+	void can_put(int set_x, int set_y, BOARD& board) {
+		cout << "COM が(" << set_x << ", " << set_y << ")に石を置きました" << endl;
+		board.put_stone(set_x, set_y, Color);
+	}
+
+	/*----------
+	置ける場所がなかった場合の処理
+	----------*/
+	void cant_put() {
+		cout << "置ける場所がないので，スキップしました" << endl;
+		Act = false;
+	}
 
 public:
 	bool Act;
@@ -41,20 +57,19 @@ public:
 			/* 置ける場所の選択 */
 			int set_x, set_y;
 			for (int x, y = 0; y < HEIGHT; y++) {
-				for (int x = 0; x < WIDTH; x++) {
+				for (x = 0; x < WIDTH; x++) {
 					if (board.isPuttable(x, y, Color) == OK) {
 						set_x = x;
 						set_y = y;
 					}
 				}
 			}
-			cout << "COM が(" << set_x << ", " << set_y << ")に石を置きました" << endl;
-			board.put_stone(set_x, set_y, Color);
+			/* 選択箇所に石を配置 */
+			can_put(set_x, set_y, board);
 		}
 		/* 置ける場所がないなら，処理をスキップ */
 		else {
-			cout << "置ける場所がないので，スキップしました" << endl;
-			Act = false;
+			cant_put();
 		}
 	}
 };
@@ -82,7 +97,7 @@ public:
 			int set_x, set_y;
 			int get_count = INT_MIN;
 			for (int x, y = 0; y < HEIGHT; y++) {
-				for (int x = 0; x < WIDTH; x++) {
+				for (x = 0; x < WIDTH; x++) {
 					if (board.isPuttable(x, y, Color) == OK) {
 						/* 取れる石の数が最大の箇所を選択する */
 						BOARD virtual_board = board;
@@ -97,13 +112,12 @@ public:
 					}
 				}
 			}
-			cout << "SUPER_COM が(" << set_x << ", " << set_y << ")に石を置きました" << endl;
-			board.put_stone(set_x, set_y, Color);
+			/* 選択箇所に石を配置 */
+			can_put(set_x, set_y, board);
 		}
 		/* 置ける場所がないなら，処理をスキップ */
 		else {
-			cout << "置ける場所がないので，スキップしました" << endl;
-			Act = false;
+			cant_put();
 		}
 	}
 };
@@ -127,7 +141,7 @@ private:
 		/* 読む手数が一定以下なら，結果を予測する */
 		if (depth < Depth) {
 			for (int x, y = 0; y < HEIGHT; y++) {
-				for (int x = 0; x < WIDTH; x++) {
+				for (x = 0; x < WIDTH; x++) {
 					BOARD virtual_board = board;
 					if (virtual_board.isPuttable(x, y, color) == OK) {
 						virtual_board.put_stone(x, y, color);
@@ -179,13 +193,12 @@ public:
 					}
 				}
 			}
-			cout << "PREDICT_COM が(" << set_x << ", " << set_y << ")に石を置きました" << endl;
-			board.put_stone(set_x, set_y, Color);
+			/* 選択箇所に石を配置 */
+			can_put(set_x, set_y, board);
 		}
 		/* 置ける場所がないなら，処理をスキップ */
 		else {
-			cout << "置ける場所がないので，スキップしました" << endl;
-			Act = false;
+			cant_put();
 		}
 	}
 };
@@ -248,7 +261,7 @@ public:
 			int set_x, set_y;
 			int weight_sum = INT_MIN;
 			for (int x, y = 0; y < HEIGHT; y++) {
-				for (int x = 0; x < WIDTH; x++) {
+				for (x = 0; x < WIDTH; x++) {
 					if (board.isPuttable(x, y, Color) == OK) {
 						BOARD virtual_board = board;
 						virtual_board.put_stone(x, y, Color);
@@ -260,13 +273,12 @@ public:
 					}
 				}
 			}
-			cout << "AI_COM が(" << set_x << ", " << set_y << ")に石を置きました" << endl;
-			board.put_stone(set_x, set_y, Color);
+			/* 選択箇所に石を配置 */
+			can_put(set_x, set_y, board);
 		}
 		/* 置ける場所がないなら，処理をスキップ */
 		else {
-			cout << "置ける場所がないので，スキップしました" << endl;
-			Act = false;
+			cant_put();
 		}
 	}
 };

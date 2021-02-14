@@ -97,7 +97,7 @@ public:
 			if (y == 0) {
 				cout << " ";
 				for (x = 0; x < WIDTH; x++) {
-					cout << x << " ";
+					cout << x + 1 << " ";
 				}
 				cout << endl;
 			}
@@ -106,7 +106,7 @@ public:
 			for (x = 0; x < WIDTH; x++) {
 				/* 縦方向のマス番号を表示 */
 				if (x == 0) {
-					cout << y;
+					cout << y + 1;
 				}
 
 				/* x, yに対応する石を表示 */
@@ -215,7 +215,6 @@ public:
 		}
 		if (count == 0) { return NG; }
 		return OK;
-
 	}
 
 	/*----------

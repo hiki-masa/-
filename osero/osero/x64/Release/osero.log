@@ -1,23 +1,19 @@
 ﻿  main.cpp
-E:\自作ゲーム\osero\osero\header\Player.hpp(42,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\自作ゲーム\osero\osero\header\Player.hpp(44,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\自作ゲーム\osero\osero\header\Computer.hpp(43,13): warning C4101: 'x': ローカル変数は 1 度も使われていません。
-E:\自作ゲーム\osero\osero\header\Computer.hpp(84,13): warning C4101: 'x': ローカル変数は 1 度も使われていません。
-E:\自作ゲーム\osero\osero\header\Computer.hpp(129,13): warning C4101: 'x': ローカル変数は 1 度も使われていません。
-E:\自作ゲーム\osero\osero\header\Computer.hpp(250,13): warning C4101: 'x': ローカル変数は 1 度も使われていません。
-E:\自作ゲーム\osero\osero\header\Read_txt.hpp(47,42): warning C4244: '引数': 'double' から '_Ty' への変換です。データが失われる可能性があります。
+C:\Users\hikim\OneDrive\ドキュメント\VS2019 Project\osero\osero\header\Player.hpp(13,10): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\hikim\OneDrive\ドキュメント\VS2019 Project\osero\osero\header\Read_txt.hpp(47,42): warning C4244: '引数': 'double' から '_Ty' への変換です。データが失われる可能性があります。
           with
           [
               _Ty=int
           ]
-E:\自作ゲーム\osero\osero\header\Computer.hpp(232): message : コンパイル対象の関数 テンプレート インスタンス化 'void get_value<std::vector<int,std::allocator<int>>>(const char *,T &)' のリファレンスを確認してください
+C:\Users\hikim\OneDrive\ドキュメント\VS2019 Project\osero\osero\header\Computer.hpp(245): message : コンパイル対象の関数 テンプレート インスタンス化 'void get_value<std::vector<int,std::allocator<int>>>(const char *,T &)' のリファレンスを確認してください
           with
           [
               T=std::vector<int,std::allocator<int>>
           ]
-E:\自作ゲーム\osero\osero\header\Read_txt.hpp(29,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\hikim\OneDrive\ドキュメント\VS2019 Project\osero\osero\header\Read_txt.hpp(29,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   コード生成しています。
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
-  All 151 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  12 of 154 functions ( 7.8%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
-  osero.vcxproj -> E:\自作ゲーム\osero\x64\Release\osero.exe
+  osero.vcxproj -> C:\Users\hikim\OneDrive\ドキュメント\VS2019 Project\osero\x64\Release\osero.exe
